@@ -5,3 +5,8 @@
    height:60px;   /* Height of the footer */
    background:#6cf;
 }
+
+.img-mini{
+	max-width:350px;
+	display:inline;
+}

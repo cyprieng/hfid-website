@@ -33,7 +33,7 @@
 #live-video p{
   margin-top:35%;
 }
-#identify button{
+#identify a{
   margin-top:200px;
   margin-left:100px;
 }
@@ -47,12 +47,12 @@
   height:75vh;
 }
 
-.left-border-div button{
+.left-border-div a{
   text-align:left;
   margin-bottom:10px;
 }
 
-.left-border-div button img{
+.left-border-div a img{
   height:20px;
 }
 

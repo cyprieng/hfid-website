@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+     <title>Scan Items</title>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/topbar.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+    <!-- navbar is the top bar constant throughout the screens -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <p class="navbar-text navbar-left"><button class="btn btn-danger" type="button"> <span class="glyphicon glyphicon-chevron-left"></span> </button></p>
+          <p class="navbar-text navbar-right"><button class="btn btn-danger" type="button" data-toggle="modal" data-target="#inBagging"> <span>CALL FOR HELP</span> </button></p>
+          <center><p class="center-text"> <span>SCAN ITEMS</span></p></center>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="inBagging" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-body">
+            <center>
+            <p class="title"> Calling you an attendant....</p>
+            <br>
+            <br>
+
+            <button class="btn btn-danger btn-attendant" type="button" data-dismiss="modal"> <span>CANCEL</span> </button>
+        </center>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+        <img class="still-img" src="img/orange.png">
+    </div>
+
+    <div class="col-md-4">
+        <p class="title">Is your produce...</p>
+        <button class="btn btn-default btn-produce-opt" type="button"> <span>oranges</span> </button>
+        <button class="btn btn-default btn-produce-opt" type="button"> <span>clementines</span> </button>
+        <button class="btn btn-default btn-produce-opt" type="button"> <span>mandarines</span> </button>
+        <button class="btn btn-success btn-produce-fail" type="button"> <p>Type in</p><p> Produce </p><p>Name</p> </button>
+        <button class="btn btn-success btn-produce-fail-left" type="button"> <span>Clear and </p><p>Try Again</span> </button>
+
+    </div>
+    <div class="col-md-1"></div>
+    </body>
+</html>

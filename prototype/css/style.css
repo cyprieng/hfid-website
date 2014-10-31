@@ -1,0 +1,109 @@
+.btn-xlarge {
+  padding: 18px 28px;
+  font-size: 50px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.color-green{
+  color:green;
+}
+
+.float-left{
+  float:left;
+  margin-right:15px;
+}
+
+#welcome h1{
+  font-size:100px;
+}
+
+#identify p{
+  font-size:50px;
+}
+
+#live-video{
+  margin-left:2%;
+  margin-right:2%;
+  border:3px solid black;
+  height:75vh;
+}
+#live-video p{
+  margin-top:35%;
+}
+#identify button{
+  margin-top:200px;
+  margin-left:100px;
+}
+
+.btn-space{
+  width:65%;
+}
+
+.left-border-div{
+  border-left:solid 3px black;
+  height:75vh;
+}
+
+.left-border-div button{
+  text-align:left;
+  margin-bottom:10px;
+}
+
+.left-border-div button img{
+  height:20px;
+}
+
+#arrow_down{
+  margin-left:30%;
+}
+
+#thank h1{
+  font-size:100px;
+}
+
+#thank h2{
+  font-size:75px;
+}
+
+#popup_remove_item img{
+  border:solid 3px black;
+}
+
+#popup_remove_item button{
+  width:300px;
+}
+
+.btn-selectmoney{
+    width:100%;
+    height: 30rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    white-space: normal;
+}
+.btn-selectsubmoney{
+    width:100%;
+    height: 14rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    white-space: normal;
+}
+.cost-text{
+    padding-top: 1rem;
+    font-size: 12rem;
+}
+
+.row-cost{
+    margin-top:5rem;
+    margin-bottom:5rem;
+}
+
+.glyphicon-remove{
+    color:red;
+}
+
+#items-table{
+    width:100%;
+}

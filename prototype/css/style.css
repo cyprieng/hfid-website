@@ -131,6 +131,15 @@
     float: left;
 }
 
+.big-btn-text{
+  font-size: 4rem;
+}
+
+.big-btn-img{
+  height:100%;
+  float:left;
+}
+
 .close_modal{
     position:absolute;
     top:0px;

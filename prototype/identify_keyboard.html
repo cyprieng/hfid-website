@@ -7,7 +7,7 @@
 
     <title>Identify Produce</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/topbar.css">
@@ -34,8 +34,8 @@
     </nav>
 
     <div id="identify_keyboard">
-      <div class="col-md-6 text-center">
-        <input type="text" class="form-control"><br/>
+      <div id="keyboard" class="col-md-6 text-center">
+        <input id="keyboard_text" type="text" class="form-control"><br/>
         <button class="btn btn-default btn-lg" type="button">Q</button>
         <button class="btn btn-default btn-lg" type="button">W</button>
         <button class="btn btn-default btn-lg" type="button">E</button>
@@ -66,7 +66,7 @@
         <button class="btn btn-default btn-lg" type="button">M</button>
         <button class="btn btn-default btn-lg" type="button"><span class="glyphicon glyphicon-arrow-left"></span></button>
         <br/><br/>
-        <button class="btn-space btn btn-default btn-lg" type="button"> </button>
+        <button class="btn-space btn btn-default btn-lg" type="button">&#160;</button>
       </div>
       <div class="left-border-div col-md-6">
         <h2>Is your produce...</h2>
@@ -99,4 +99,13 @@
       </div>
     </div>
   </body>
+
+  <script type="text/javascript">
+    $("#keyboard button").click(function(e){
+        if(e.currentTarget.innerText == "")
+            $("#keyboard_text").val($("#keyboard_text").val().substring(0,$("#keyboard_text").val().length-1));
+        else
+            $("#keyboard_text").val($("#keyboard_text").val()+e.currentTarget.innerText);
+    });
+  </script>
 </html>

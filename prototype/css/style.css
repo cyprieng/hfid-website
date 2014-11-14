@@ -107,3 +107,10 @@
 #items-table{
     width:100%;
 }
+
+.close_modal{
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+.close_modal a img{width:50px;}

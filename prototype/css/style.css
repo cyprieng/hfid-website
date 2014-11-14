@@ -107,3 +107,12 @@
 #items-table{
     width:100%;
 }
+
+.big-btn-text{
+  font-size: 4rem;
+}
+
+.big-btn-img{
+  height:100%; 
+  float:left
+}

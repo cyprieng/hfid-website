@@ -70,12 +70,11 @@
       </div>
       <div class="left-border-div col-md-6">
         <h2>Is your produce...</h2>
-        <a class="btn-space btn btn-default btn-lg" href="scanItems.html"><img src="img/produce/orange.png"/>Orange</a>
-        <a class="btn-space btn btn-default btn-lg" href="scanItems.html"><img src="img/produce/orange.png"/>Orange</a>
-        <a class="btn-space btn btn-default btn-lg" href="scanItems.html"><img src="img/produce/orange.png"/>Orange</a>
-        <a class="btn-space btn btn-default btn-lg" href="scanItems.html"><img src="img/produce/orange.png"/>Orange</a>
-        <a class="btn-space btn btn-default btn-lg" href="scanItems.html"><img src="img/produce/orange.png"/>Orange</a>
         <br/>
+        <p id="space"><br/><br/></p>
+        <p id="arrow_up"><button class="btn btn-default btn-lg" type="button"><span class="glyphicon glyphicon-arrow-up"></span></button></p>
+        <div id="prop_list">
+        </div>
         <p id="arrow_down"><button class="btn btn-default btn-lg" type="button"><span class="glyphicon glyphicon-arrow-down"></span></button></p>
       </div>
     </div>
@@ -101,11 +100,57 @@
   </body>
 
   <script type="text/javascript">
+    var produceList = ["orange", "apple", "organic orange", "Lucky Charms", "Grain Bread", "Frosted Flakes"];
     $("#keyboard button").click(function(e){
         if(e.currentTarget.innerText == "")
             $("#keyboard_text").val($("#keyboard_text").val().substring(0,$("#keyboard_text").val().length-1));
         else
             $("#keyboard_text").val($("#keyboard_text").val()+e.currentTarget.innerText);
+
+        GLOBAL_OFFSET = 0;
+        filterProduce();
     });
+
+    var GLOBAL_OFFSET = 0;
+    $("#arrow_down").click(function(){
+        GLOBAL_OFFSET++;
+        filterProduce(GLOBAL_OFFSET);
+    });
+
+    $("#arrow_up").click(function(){
+        GLOBAL_OFFSET--;
+        filterProduce(GLOBAL_OFFSET);
+    });
+
+    function filterProduce(offset){
+        var i = 0;
+        if(typeof offset === "undefined")
+            offset=0;
+
+        $("#arrow_down").hide();
+        $("#arrow_up").hide();
+        $("#space").show();
+        $("#prop_list").html("");
+        for(var key in produceList){
+            var p = produceList[key];
+            if(p.toLowerCase().indexOf($("#keyboard_text").val().toLowerCase()) > -1){
+                if(i >= offset)
+                    $("#prop_list").html($("#prop_list").html()+'<a class="btn-space btn btn-default btn-lg" href="scanItems.html"><img src="img/produce/orange.png"/>'+p+'</a>');
+                i++;
+            }
+
+            if(i-offset==5){
+                if(i==produceList.length){
+                    $("#arrow_up").show();
+                    $("#space").hide();
+                }
+                else
+                    $("#arrow_down").show();
+                break;
+            }
+        }
+    }
+
+    filterProduce();
   </script>
 </html>

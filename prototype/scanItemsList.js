@@ -53,10 +53,15 @@ function addItemToTable(item) {
 	$(newItem).appendTo("#items-table-body")
 }
 
+function updatePrice(itemList) {
+	var newPrice = getTotalPrice(itemList)
+	$('.total-cost').text(String(newPrice))
+}
+
 $(document).ready(function () {
 	for (i = 0; i < scannedItems.length; i++) {
 		item = scannedItems[i]
 		addItemToTable(item)
-
 	}
+	updatePrice(scannedItems)
 })

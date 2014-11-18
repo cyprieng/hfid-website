@@ -107,6 +107,7 @@
         else
             $("#keyboard_text").val($("#keyboard_text").val()+e.currentTarget.innerText);
 
+        GLOBAL_OFFSET = 0;
         filterProduce();
     });
 
@@ -122,8 +123,6 @@
     });
 
     function filterProduce(offset){
-        GLOBAL_OFFSET = 0;
-
         var i = 0;
         if(typeof offset === "undefined")
             offset=0;

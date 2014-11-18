@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>HFID SelfCheckout Redesign</title>
+
+    <!-- add Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <h3 class="text-muted">Team Clark Is Superman</h3>
+        <ul class="nav nav-justified">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="project_brief.html">Project Brief</a></li>
+          <li><a href="inspiration.html">Inspirational Design</a></li>
+          <li><a href="needs_analysis.html">Needs Analysis</a></li>
+          <li><a href="interaction_flow.html">Interaction Flow</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Paper Prototype <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="pp_version1.html">Version 1</a></li>
+              <li><a href="pp_version2.html">Version 2</a></li>
+              <li><a href="pp_version3.html">Version 3</a></li>
+            </ul>
+          </li>
+          <li><a href="design_development.html">Design Development</a></li>
+          <li><a href="effort_chart.html">Effort Chart</a></li>
+          <li><a href="prototype/">Prototype</a></li>
+          <li><a href="heuristic_evaluation_clark_is_superman.pdf">Heuristic Evaluation</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1> Design Refinement </h1>
+        <hr>
+
+        <h2>Design Overview</h2>
+        <p>Our redesigned self-checkout system focuses on a few major areas that we saw needed improvement. Most visibly, the process of purchasing produce has been overhauled. When customers place their produce on the scale, a camera will identify which type of produce is being purchased, saving the user the time that is typically wasted navigating many menus (as seen in Image 1). Additionally, if this process were to fail, customers have the choice to opt out of using the camera and physically type in the name of their produce.</p>
+
+        <figure class="text-center">
+          <a href="img/DesignRefinement/produce.png"><img class="img-responsive img-mini" src="img/DesignRefinement/produce.png"/></a>
+          <figcaption>Image 1: Orange produce identified and options presented</figcaption>
+        </figure>
+
+        <p>Security was a large concern for store attendants, so we have taken measures to prevent shoplifting. Any item with a barcode is now outfitted with a magnetized RFID tag. When a customer scans their item, the RFID tag is demagnetized. When they leave the store, if they have any unscanned items, an alarm will sound, much like with unchecked books at the library. This has allowed us to eliminate some of the more objectionable security features, such as the weighted bagging area and many needless calls to the attendant. In addition to RFID tags, the produce identifying camera also adds to store security. Produce will not be recognized by the camera if there are hands in the screen, which prevents the produce from being registered at a lighter weight. </p>
+        <p>As part of the security revamp, we have also overhauled the item return process. This was a complaint of many users because no system has a way to cancel an item after purchase without calling an attendant. Current self-checkout systems require that the customer call an attendant, who will come to remove the item in question. With our system, a customer can just place their item into a designated return bin (as seen in Image 2). If the item has an RFID tag, then it will automatically be detected, remagnetized, and removed from the checkout list. If it does not, then the customer will be asked to select which item has been returned; this is confirmed through the known weight of the item.</p>
+
+        <figure class="text-center">
+          <a href="img/DesignRefinement/return.png"><img class="img-responsive img-mini" src="img/DesignRefinement/return.png"/></a>
+          <figcaption>Image 2: Prompt to return item through placement in return bin</figcaption>
+        </figure>
+
+        <p>Through several measures in our redesign we have removed the need to automatically call attendants. Current systems will call attendants frequently, much to the chagrin of the customer. Our system will only call an attendant when the customer chooses. The users are made to feel more autonomous and independent.</p>
+        <p>Note that the full prototype experience can be found at <a href="http://hfid.olin.edu/sa2015/ClarkIsSuperman/prototype/">http://hfid.olin.edu/sa2015/ClarkIsSuperman/prototype/</a>. The system comes with items pre-scanned as seen in Image 3 so that the user can experience all of the features.</p>
+
+        <figure class="text-center">
+          <a href="img/DesignRefinement/scan.png"><img class="img-responsive img-mini" src="img/DesignRefinement/scan.png"/></a>
+          <figcaption>Image 3: Main page during item scanning</figcaption>
+        </figure>
+
+        <h2>Design Changes</h2>
+        <h3>From Paper to Prototype</h3>
+
+        <p>Moving our paper prototype to be an online interface was done quickly with almost a direct one-to-one correlation. As a group, we afterwards discussed that this should not have been done because it was an ideal time to reevaluate certain designs and to introduce consistency that was missing during the paper prototype. However, as a result, there were many small usability issues with the buttons and text. For example, when creating our paper prototypes, we were not focused on qualities like text size because we would wrote text that was big enough for the drawn button. When translating our screens to html, the important of text size (as well as many other minor qualities) was lost on the wayside. </p>
+
+        <h3>Result of Heuristic Evaluation</h3>
+        <p>During the heuristic evaluation feedback, a number of our feedback issues were aesthetic in nature. For example, certain buttons were too small or text wasn’t big enough. We realized that even though our prototype is online, it is intended to be a touch screen and therefore should have an easy-to-touch interface. The following quick edits were made to our online prototype</p>
+        <ul>
+            <li>make text in buttons bigger</li>
+            <li>make ‘x’ button bigger (to cancel an item on main page)</li>
+            <li>fix typos (on cash screen)</li>
+            <li>fix inconsistent button/menu sizes</li>
+            <li>add scroll functionality to items (main page)</li>
+            <li>given the produce button an icon</li>
+        </ul>
+        <p>These have all been implemented into the current version of the online prototype, as shown in the Design Walkthough above.</p>
+
+        <p>A few other changes directly result from two questions in the heuristic evaluation:</p>
+        <ul>
+            <li>“If your design works, people will be checking out with more than just a few items. How will your main screen handle more than 10+ items?”
+<br/><u>Answer:</u> To lessen the amount of clutter on the main checkout screen, we have implemented a quantity column for users who have several of the same item. We also enabled scrolling for when there are more items than will fit in the checkout list box. We are planning on implementing a button up/down to afford the scrolling action (as well as for the buttons to be clickable).</li>
+            <li>“Even though it is a virtual system, it was confusing for the total sums to be different. Why is there not consistency between the screens?”
+<br/><u>Answer:</u> This was a valid concern and one that was an oversight on our part. It is important to have constants like total price the same throughout the model, even though the total was not dynamically updated. it is not implemented yet, but we plan to dynamically be able to do the following actions (to address the concept of consistency).
+                <ul>
+                    <li>when deleting an item, the total cost decreases</li>
+                    <li>the total cost (whether increased or decreased) is the same on all pages</li>
+                    <li>see the list of items you are purchasing while paying</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Finally, we do want to implement one last major change to our online system to improve user testing and usability. Right now, we only have the virtual part of the system (the screen during checkout) but there is a significant physical component of the checkout process. For example, you can’t actually cancel items until they are placed in the return bin. Therefore, adding a virtual return bin with virtual items would really help people understand and critique. The following additions that need to be implemented are listed below.</p>
+        <ul>
+            <li>Be able to place items into return bin</li>
+            <li>Be able to scan new items </li>
+            <li>Be able to identify new produce</li>
+            <li>Be able to place scanned items into a shopping bag</li>
+        </ul>
+
+        <h2>Key Insights</h2>
+
+        <h3>Moving a paper prototype online requires additional design decisions.</h3>
+        <p>A paper prototype is meant to function as something that can be easily changed and quickly created. As a result, small details such as button size and text size were not thought through. </p>
+
+        <h3>Emulating a physical interface is difficult with only a screen.</h3>
+        <p>In almost any situations, there is not just a screen. Therefore it could be helpful to also simulate a virtual world.</p>
+
+        <h3>Thinking for success (or failure) is a great way to design.</h3>
+        <p>Our team got a lot of excitement and design when considering what would happen if our self checkout design was successful (ie many items would be used). As a group, we feel like considering what could fail also helped us ideate features/improvements.</p>
+
+        <h2>Open Questions</h2>
+        <h3>How do we effectively convey physical actions in an online prototype?</h3>
+        <p>We are considering implementing a simple checkout process alongside our prototype. How should that be implemented? Should it be animated or can we just let the user click actions?</p>
+      </div>
+    </div> <!-- /container -->
+  </body>
+</html>

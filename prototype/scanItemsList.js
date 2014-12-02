@@ -11,6 +11,12 @@ function addItem(name, price, produce){
     window.location.href = "scanItems.html";
 }
 
+function removeItem(id){
+    scannedItems.splice(id,1);
+    sessionStorage.setItem('listItems', $.toJSON(scannedItems));
+    window.location.href = "scanItems.html";
+}
+
 if(sessionStorage.getItem('listItems') == null){
     scannedItems = [];
     sessionStorage.setItem('listItems', $.toJSON(scannedItems));
@@ -41,26 +47,30 @@ function priceToString(price) {
 	}
 }
 
-function addItemToTable(item) {
+var nextAction = "";
+
+function addItemToTable(item, id) {
 	var newItem =   '<tr>\
                          <td>'+item.itemName+'</td>\
                          <td>'+priceToString(item.price)+'</td>\
                          <td>'+String(item.quantity)+'</td>\
                          <td>'+priceToString(item.price * item.quantity)+'</td>\
-                         <td><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#return_bin"><span class="glyphicon glyphicon-remove"></span></button></td>\
+                         <td><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#return_bin" onclick="nextAction=\'removeItem('+id+')\'"><span class="glyphicon glyphicon-remove"></span></button></td>\
                      </tr>'
 	$(newItem).appendTo("#items-table-body")
 }
 
 function updatePrice(itemList) {
 	var newPrice = getTotalPrice(itemList)
-	$('.total-cost').text(String(newPrice))
+	$('.total-cost').text(priceToString(newPrice))
+    $('.cost-text').text(priceToString(newPrice))
+    $('.cost-text2').text(priceToString(newPrice))
 }
 
 $(document).ready(function () {
 	for (i = 0; i < scannedItems.length; i++) {
 		item = scannedItems[i]
-		addItemToTable(item)
+		addItemToTable(item, i)
 	}
 	updatePrice(scannedItems)
 })

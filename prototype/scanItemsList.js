@@ -5,19 +5,18 @@ function scannedItem(itemName, price, quantity, produce) {
     this.produce = produce;
 }
 
-scannedItems = [
-	new scannedItem("Lucky Charms", 5, 1, false),
-	new scannedItem("Grain Bread", 1, 7, false),
-	new scannedItem("Oranges", 1.99, 1, true),
-	new scannedItem("Frosted Flakes", 5, 1, false),
-	new scannedItem("Lettuce", 1, 7, true),
-	new scannedItem("Peanut Butter", 1.99, 1, false),
-	new scannedItem("Organic Milk", 5, 1, false),
-	new scannedItem("Milano Cookies", 5, 1, false),
-	new scannedItem("Apples", 1.99, 1, true),
-	new scannedItem("Blackberry Jam", 5, 1, false),
-	new scannedItem("Strawberries", 1, 3, false)
-]
+function addItem(name, price, produce){
+    scannedItems.push(new scannedItem(name, price, 1, produce));
+    sessionStorage.setItem('listItems', $.toJSON(scannedItems));
+    window.location.href = "scanItems.html";
+}
+
+if(sessionStorage.getItem('listItems') == null){
+    scannedItems = [];
+    sessionStorage.setItem('listItems', $.toJSON(scannedItems));
+}
+else
+    scannedItems = $.evalJSON(sessionStorage.getItem('listItems'));
 
 function getTotalPrice(scannedItems) {
 	// Given a list of scanned items,

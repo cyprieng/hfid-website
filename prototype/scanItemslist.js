@@ -31,11 +31,9 @@ function getTotalPrice(scannedItems) {
 	sum = 0
 	for (i = 0; i < scannedItems.length; i++) {
 		item = scannedItems[i]
-		console.log(item.itemName)
 		sum += item.price * item.quantity
 		sum = Math.round(sum*100)/100
 	}
-	console.log(sum)
 	return sum
 }
 
@@ -50,14 +48,22 @@ function priceToString(price) {
 var nextAction = "";
 
 function addItemToTable(item, id) {
+    var target = "#return_bin";
+    if(item.produce == 1){
+        target = "#remove_item";}
+
 	var newItem =   '<tr>\
                          <td>'+item.itemName+'</td>\
                          <td>'+priceToString(item.price)+'</td>\
                          <td>'+String(item.quantity)+'</td>\
                          <td>'+priceToString(item.price * item.quantity)+'</td>\
-                         <td><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#return_bin" onclick="nextAction=\'removeItem('+id+')\'"><span class="glyphicon glyphicon-remove"></span></button></td>\
+                         <td><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="'+target+'" onclick="nextAction=\'removeItem('+id+')\';updateProduce(\''+item.itemName+'\');"><span class="glyphicon glyphicon-remove"></span></button></td>\
                      </tr>'
 	$(newItem).appendTo("#items-table-body")
+}
+
+function updateProduce(text){
+    $(".name_produce").text(text);
 }
 
 function updatePrice(itemList) {

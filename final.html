@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>HFID SelfCheckout Redesign</title>
+
+    <!-- add Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <h3 class="text-muted"><a href="index.html">Team Clark Is Superman</a></h3>
+        <ul class="nav nav-justified">
+          <li><a href="project_brief.html">Project Brief</a></li>
+          <li><a href="inspiration.html">Inspirational Design</a></li>
+          <li><a href="needs_analysis.html">Needs Analysis</a></li>
+          <li><a href="interaction_flow.html">Interaction Flow</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Paper Prototype <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="pp_version1.html">Version 1</a></li>
+              <li><a href="pp_version2.html">Version 2</a></li>
+              <li><a href="pp_version3.html">Version 3</a></li>
+            </ul>
+          </li>
+          <li><a href="design_development.html">Design Development</a></li>
+          <li><a href="effort_chart.html">Effort Chart</a></li>
+          <li><a href="prototype/">Prototype</a></li>
+          <li><a href="heuristic_evaluation_clark_is_superman.pdf">Heuristic Evaluation</a></li>
+          <li><a href="design_refinement.html">Design Refinement</a></li>
+          <li><a href="futd.html">Formal Usability Test Design</a></li>
+          <li><a href="her.html">Heuristic Evaluation Response</a></li>
+          <li><a href="fut.html">Formal Usability Testing</a></li>
+          <li><a href="final.html">Final Writeup</a></li>
+        </ul>
+      </div>
+
+
+
+      <!-- Site footer -->
+      <div class="content">
+        <h1> Final summary of Self-Checkout redesign </h1>
+        <h6>Or, How I Learned To Stop Worrying And Love The Grocery Store</h6>
+        <hr>
+
+        <h2>Background: What Is Self-Checkout?</h2>
+        <p>A recent phenomenon in grocery stores is the introduction of self-checkout machines. Shoppers are able to scan their own groceries, which allows the stores to cut down on labor costs. Self-checkout machines are typically seen at larger chain stores, such as Stop & Shop and Shaw’s. Most systems will have one attendant (the “floater”) monitoring every three or four self-checkout counters. The floater serves as a check against theft, and can help any shoppers who need assistance.</p>
+
+        <h2>Pain Points</h2>
+        <p>Through observation at various grocery stores (CVS, Shaw’s, and Stop & Shop) that implement self-checkout, we identified four major pain points. These pain points are directly responsible for making self-checkout an unappealing and not streamlined process.</p>
+        <ul>
+            <li>Scanning produce is confusing and slow</li>
+            <li>Easy for shoppers to get tripped up by the machine</li>
+            <li>Weighted bagging area leads to many user errors</li>
+            <li>Machine constantly calls the attendant</li>
+        </ul>
+        <p>To read more about the user testing which led to these pain points, read these reports: link to needs analysis and formal usability testing</p>
+
+        <h2>Our Solution</h2>
+        <h3>Physical System Changes</h3>
+        <p>There are four main changes to the physical system:</p>
+        <ul>
+            <li>RFID chips to scannable items</li>
+            <li>Image recognition (for produce)</li>
+            <li>Removed weighed bagged system</li>
+            <li>Added return bin (which has RFID sensors and weight sensor)</li>
+        </ul>
+
+        <p class="pull-right"><a href="img/final/return.png"><img class="img-mini" src="img/final/return.png"/></a></p>
+        <p>The RFID chips, image recognition and the return bin all contribute to a more secure system. This is important for the self-checkout floaters and the companies which buy this system.  With RFID chips, the floater can guarantee that all scannable items leaving the store have been paid for (or an alarm would go off). Image recognition also ensures shoppers are selecting the correct produce rather than the cheapest one. Finally, the return bin guarantees that canceled items are not stolen. </p>
+
+        <br/><br/><br/><br/><br/>
+
+        <p class="pull-right" style="clear:both"><a href="img/final/identify.png"><img class="img-mini" src="img/final/identify.png"/></a></p>
+        <p>All of the above physical alterations also make the system more robust/faster for the shopper. The RFID chips guarantee an item is never “double scanned”. Image recognition prevents the user from having to scroll through multiple pages for produce. The weighted bagging system caused most of the distress for shoppers. Many times a shopper didn’t correctly use the bagging system, resulting in the shopper having to wait for an floater to come help.  Finally, the return bin adds a place for shoppers to return items - a feature that currently doesn’t exist. It saves time because shoppers don’t have to find a floater or walk back to the item’s original place in the store.</p>
+
+        <h3>Software System Changes</h3>
+        <p>There are four main changes to the software system:</p>
+        <ul>
+            <li>“Call for Help” button on every page</li>
+            <li>Back button on every page</li>
+            <li>Image recognition (but still have keyboard)</li>
+            <li>Cancel item button</li>
+            <li>State of self-checkout at top of page</li>
+        </ul>
+
+        <p class="pull-right"><a href="img/final/call.png"><img class="img-mini" src="img/final/call.png"/></a></p>
+        <p>In order to help the user have more control of the system, a help button was added with the ability to cancel the call. This lets the shopper control the request from beginning to end. Also, the back button lets them “cancel” a button click. The system never holds the shopper to a button click. </p>
+
+        <p style="clear:both">In order to enable faster checkout, the image recognition and cancel item button are paramount. Image recognition prevents the user from having to scroll through pages of produce options. However, again to let users keep control there is still the option to type in their produce. (If image recognition doesn’t work.) Finally, letting users cancel their own items ensures they don’t need to wait for a floater. </p>
+
+        <p class="pull-right"><a href="img/final/bar.png"><img class="img-mini" src="img/final/bar.png"/></a></p>
+        <p>To ensure clarity of the system, the state of the machine (ex. identify produce, scan item) is at the top of the screen. This subtly helps the shopper if they ever forget what step they are currently performing.</p>
+    </div> <!-- /container -->
+  </body>
+</html>
